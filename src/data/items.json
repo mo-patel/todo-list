@@ -1,0 +1,24 @@
+[
+    {
+        "id": "td1",
+        "name": "Clean room",
+        "checked": false
+    },
+    {
+        "id": "td2",
+        "name": "Make breakfast",
+        "checked": false
+    },{
+        "id": "td3",
+        "name": "Prep for work",
+        "checked": false
+    },{
+        "id": "td4",
+        "name": "Throw rubbish outside",
+        "checked": false
+    },{
+        "id": "td5",
+        "name": "Drink 2 litres water",
+        "checked": false
+    }
+]
