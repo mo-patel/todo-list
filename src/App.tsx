@@ -7,9 +7,12 @@ import data from './data/items.json'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <h3>
+        Todo List
+      </h3>
+      <div className='content'>
         <TodoTabs data={data} activeType={2} />
-      </header>
+      </div>
     </div>
   );
 }

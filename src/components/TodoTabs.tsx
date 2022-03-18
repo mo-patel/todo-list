@@ -1,14 +1,14 @@
-import { FC, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import Tabs, { TabPane } from 'rc-tabs';
 import '../styles/rcTabs.css';
 import { TodoItem } from "../types/todoItem";
 import { TodoItemComponent } from "./TodoItem";
-interface TodoTabs {
+interface todoTabsProps {
     data: TodoItem[]
     activeType: number
 }
 
-export const TodoTabs: FC<TodoTabs> = ({data, activeType}) => {
+export const TodoTabs: FC<todoTabsProps> = ({data, activeType}) => {
     const [items, updateItems] = useState(data);
     const itemToggled = (id: string)=>{
         const newItemList = [...items];
@@ -19,11 +19,11 @@ export const TodoTabs: FC<TodoTabs> = ({data, activeType}) => {
 
     return(
         <>
-            <Tabs tabBarGutter={150}>
+            <Tabs tabBarStyle={{borderBottom: '3px solid grey'}} animated={{ inkBar: true, tabPane: true }} tabBarGutter={150}>
                 <TabPane tab="All" key="1">
                     {
                         items.map((item) => {
-                            return <TodoItemComponent key={item.id} id={item.id} name={item.name} checked={item.checked} onChangeCb={itemToggled} />
+                            return <TodoItemComponent key={item.id} todo={item} onChangeCb={itemToggled} />
                         })
                     }
                 </TabPane>
@@ -31,7 +31,7 @@ export const TodoTabs: FC<TodoTabs> = ({data, activeType}) => {
                     {
                         items.map((item)=>{
                             if(!item.checked)
-                                return <TodoItemComponent key={item.id} id={item.id} name={item.name} checked={item.checked} onChangeCb={itemToggled} />
+                                return <TodoItemComponent key={item.id} todo={item} onChangeCb={itemToggled} />
                             return false;
                         })
                     }
@@ -40,7 +40,7 @@ export const TodoTabs: FC<TodoTabs> = ({data, activeType}) => {
                 {
                     items.map((item)=>{
                         if(item.checked)
-                            return <TodoItemComponent key={item.id} id={item.id} name={item.name} checked={item.checked} onChangeCb={itemToggled} />
+                            return <TodoItemComponent key={item.id} todo={item} onChangeCb={itemToggled} />
                         return false;
                     })
                 }

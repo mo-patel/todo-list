@@ -103,7 +103,7 @@
   direction: rtl;
 }
 .rc-tabs {
-  border: 1px solid gray;
+  border: 1px solid white;
   font-size: 14px;
   overflow: hidden;
 }
@@ -241,9 +241,11 @@
 }
 .rc-tabs-content-holder {
   padding: 10px;
-  background: #e7e7e7;
 }
 .rc-tabs-content {
 }
 
+.rc-tabs-nav-wrap{
+  justify-content: center;
+}
 /* RC TABS STOP */

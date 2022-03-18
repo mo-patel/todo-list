@@ -1,11 +1,21 @@
+#root {
+    width: 100%;
+}
+
 .todoRow{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    font-size: 1.2em;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .tabs {
     display: flex;
     flex-direction: row;
+}
+
+.checkboxes {
+    width: 0.5em;
+    height: 0.5em;
 }
