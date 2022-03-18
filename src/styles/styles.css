@@ -19,3 +19,25 @@
     width: 0.5em;
     height: 0.5em;
 }
+
+.addItemRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.addItemTxt {
+    flex: 3;
+    border-radius: 5px;
+    min-height: 5vh;
+    margin: 4px;
+}
+
+.addItemSubmit {
+    flex:0.5;
+    border-radius: 5px;
+    background-color: rgba(17, 17, 246, 0.835);
+    margin: 4px;
+    font-weight: bold;
+}

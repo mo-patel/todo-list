@@ -1,8 +1,9 @@
-import { ChangeEvent, FC, useState } from "react";
+import { FC, useState } from "react";
 import Tabs, { TabPane } from 'rc-tabs';
 import '../styles/rcTabs.css';
 import { TodoItem } from "../types/todoItem";
 import { TodoItemComponent } from "./TodoItem";
+import { AddItemComponent } from "./AddItem";
 interface todoTabsProps {
     data: TodoItem[]
     activeType: number
@@ -17,10 +18,19 @@ export const TodoTabs: FC<todoTabsProps> = ({data, activeType}) => {
         updateItems(newItemList);
     }
 
+    const addItem = (text: string)=> {
+        const newItem: TodoItem = {id: "td" + (items.length + 1), name: text, checked: false};
+        const oldItems = [...items];
+        oldItems.push(newItem);
+        updateItems(oldItems);
+    }
+
     return(
         <>
             <Tabs tabBarStyle={{borderBottom: '3px solid grey'}} animated={{ inkBar: true, tabPane: true }} tabBarGutter={150}>
                 <TabPane tab="All" key="1">
+                    <AddItemComponent addItemCb={addItem} />
+                    {console.log(items)}
                     {
                         items.map((item) => {
                             return <TodoItemComponent key={item.id} todo={item} onChangeCb={itemToggled} />
@@ -28,6 +38,7 @@ export const TodoTabs: FC<todoTabsProps> = ({data, activeType}) => {
                     }
                 </TabPane>
                 <TabPane tab="Active" key="2">
+                    <AddItemComponent addItemCb={addItem} />
                     {
                         items.map((item)=>{
                             if(!item.checked)
