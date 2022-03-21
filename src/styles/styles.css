@@ -1,3 +1,7 @@
+.content {
+    max-width: 80%;
+}
+
 #root {
     width: 100%;
 }
@@ -8,6 +12,13 @@
     font-size: 1.2em;
     width: 100%;
     margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.todoLabel {
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
 }
 
 .tabs {
@@ -40,4 +51,23 @@
     background-color: rgba(17, 17, 246, 0.835);
     margin: 4px;
     font-weight: bold;
+}
+
+.deleteAllDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 5%;
+}
+
+.deleteAllBtn {
+    min-height: 40px;
+    background-color: rgba(245, 24, 24, 0.876);
+    border-radius: 4px;
+}
+
+.deleteImg {
+    height: 19px;
+    width: 16px;
 }
