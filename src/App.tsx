@@ -1,5 +1,5 @@
 import './App.css';
-import { TodoTabs } from './components/TodoTabs';
+import { TodoTabs } from './components/TodoTabsComponent';
 import data from './data/items.json'
 
 function App() {

@@ -2,8 +2,8 @@ import { FC, useState } from "react";
 import Tabs, { TabPane } from 'rc-tabs';
 import '../styles/rcTabs.css';
 import { TodoItem } from "../types/todoItem";
-import { TodoItemComponent } from "./TodoItem";
-import { AddItemComponent } from "./AddItem";
+import { TodoItemComponent } from "./TodoItemComponent";
+import { AddItemComponent } from "./AddItemComponent";
 interface todoTabsProps {
     data: TodoItem[]
     activeType: number
